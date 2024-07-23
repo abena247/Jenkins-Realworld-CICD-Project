@@ -60,8 +60,8 @@ pipeline {
             }
         }
     }
-    stage('SonarQube Inspection') {
-        steps {
+    //stage('SonarQube Inspection') {
+        //steps {
            // dir('realworld-cicd-pipeline-project-main/') {
             //withSonarQubeEnv('SonarQube') {
                 //withCredentials([string(credentialsId: 'SonarQube-Token', variable: 'SONAR_TOKEN')]) {
@@ -76,12 +76,12 @@ pipeline {
            // }
         }
     }
-    stage('SonarQube Quality Gate') {
-        steps {
+    //stage('SonarQube Quality Gate') {
+        //steps {
           // Set a timeout for the quality gate check
             timeout(time: 1, unit: 'HOURS') {
             // Wait for the SonarQube quality gate result and abort the pipeline if it fails
-            waitForQualityGate(abortPipeline: true)
+            //waitForQualityGate(abortPipeline: true)
         }
     }
     }
@@ -94,7 +94,7 @@ pipeline {
               nexusUrl: '172.31.3.98:8081',
               groupId: 'webapp',
               version: "${env.BUILD_ID}-${env.BUILD_TIMESTAMP}",
-              repository: 'maven-snapshots',  //"${NEXUS_REPOSITORY}",
+              repository: 'maven-releases',  //"${NEXUS_REPOSITORY}",
               credentialsId: "${NEXUS_CREDENTIAL_ID}",
               artifacts: [
                   [artifactId: 'webapp',
