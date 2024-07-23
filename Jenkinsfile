@@ -70,7 +70,7 @@ pipeline {
                 //-Dsonar.projectKey=JavaWebApp-Project \
                 //-Dsonar.host.url=http://172.31.13.128:9000 \
                 //-Dsonar.login=$SONAR_TOKEN
-                """
+                //"""
                 //}
             //}
            // }
@@ -156,4 +156,3 @@ pipeline {
         message: "*${currentBuild.currentResult}:* Job Name '${env.JOB_NAME}' build ${env.BUILD_NUMBER} \n Build Timestamp: ${env.BUILD_TIMESTAMP} \n Project Workspace: ${env.WORKSPACE} \n More info at: ${env.BUILD_URL}"
     }
   }
-}
