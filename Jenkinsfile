@@ -71,22 +71,22 @@ pipeline {
                 //-Dsonar.host.url=http://172.31.13.128:9000 \
                 //-Dsonar.login=$SONAR_TOKEN
                 """
-                }
-            }
+                //}
+            //}
            // }
-        }
-    }
+        //}
+    //}
     //stage('SonarQube Quality Gate') {
         //steps {
           // Set a timeout for the quality gate check
-            timeout(time: 1, unit: 'HOURS') {
+            //timeout(time: 1, unit: 'HOURS') {
             // Wait for the SonarQube quality gate result and abort the pipeline if it fails
             //waitForQualityGate(abortPipeline: true)
-        }
-    }
-    }
+        //}
+    //}
+    //}
     stage("Nexus Artifact Uploader"){
-        steps{
+       steps{
           // dir('realworld-cicd-pipeline-project-main/') {
            nexusArtifactUploader(
               nexusVersion: 'nexus3',
